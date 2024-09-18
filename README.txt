@@ -20,7 +20,7 @@ sqlparse==0.5.1
 tzdata==2024.1
 
 luego ejecutar:
-py manage.py runserver
+py manage.py runserver [PORT]
 
 En el navegador de preferencia ir a 
-localhost:8000/
+localhost:[PORT]/
