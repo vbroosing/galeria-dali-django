@@ -1,0 +1,29 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/obra.css' %}">
+{% endblock %}
+
+
+{% block body %}
+<!-- <div class="espacio"></div> -->
+ <p></p>
+
+<main class="container">
+    
+    {% for imagen in imagenes %}
+        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+            <center>
+                <img src="{% static 'src/img/'|add:imagen %}" alt="Imagen del set" height="mx-auto" width="mx-auto">
+            </center>
+        </div>
+    {% endfor %}  
+    <a href="/" class="btn   btn-outline-secondary">volver</a>
+        
+</main>
+<script src="{% static 'js/inicio.js' %}"></script>
+{% endblock %}

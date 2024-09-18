@@ -1,0 +1,8 @@
+.disposicionElementos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+/* 
+.espacio {
+    margin-top: 100px;
+} */
