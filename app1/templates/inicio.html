@@ -31,160 +31,22 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-                <!-- IMAGEN 01 - PERSISTENCIA DE LA MEMORIA -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{% static 'src/img/img01.jpg' %}" alt="Img 01" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                        <div class="card-body">
-                            <p><strong>La Persistencia de la Memoria</strong></p>
-                            <hr>
-                            <p class="card-text">
-                                Una fiesta con surrealismo donde el tiempo se toma una siesta.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'obra' '1' %}"><button class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <small class="text-body-secondary">9 mins</small>
+                {% for obra in obras %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="{% static obra.img %}" alt="{{ obra.title }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                            <div class="card-body">
+                                <p><strong>{{ obra.title }}</strong></p>
+                                <hr>
+                                <p class="card-text">{{ obra.description }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="{% url obra.url obra.id %}"><button class="btn btn-sm btn-outline-secondary">View</button></a>
+                                    <small class="text-body-secondary">{{ obra.time }}</small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{% static 'src/img/img02.jpg' %}" alt="Img 01" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                        <div class="card-body">
-                            <p><strong>Los Elefantes</strong></p>
-                            <hr>
-                            <p class="card-text">
-                                Estos elefantes caminan con sus piernas largas, delgadas y frágiles.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'obra' '2' %}"><button class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{% static 'src/img/img03.jpg' %}" alt="Img 01" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                        <div class="card-body">
-                            <p><strong>El Sacramento de la Última Cena</strong></p>
-                            <hr>
-                            <p class="card-text">
-                                Las figuras bíblicas reciben una transformación surrealista.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'obra' '3' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{% static 'src/img/img04.jpg' %}" alt="Img 01" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                        <div class="card-body">
-                            <p><strong>Cisnes Reflejando Elefantes</strong></p>
-                            <hr>
-                            <p class="card-text">
-                                Un baile surrealista junto al lago, con cisnes y elefantes intercambiando roles en un tango.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'obra' '4' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{% static 'src/img/img05.jpg' %}" alt="Img 01" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                        <div class="card-body">
-                            <p><strong>La Metamorfosis de Narciso</strong></p>
-                            <hr>
-                            <p class="card-text">
-                                Un laberinto de espejos lleno de significado que nos deja reflexionando.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'obra' '5' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{% static 'src/img/img06.jpg' %}" alt="Img 01" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                        <div class="card-body">
-                            <p><strong>El Enigma de Hitler</strong></p>
-                            <hr>
-                            <p class="card-text">
-                                Una piñata política que desafía nuestra percepción del poder.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'obra' '6' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{% static 'src/img/img07.jpg' %}" alt="Img 01" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                        <div class="card-body">
-                            <p><strong>El Rabo de las Golondrinas</strong></p>
-                            <hr>
-                            <p class="card-text">
-                                Una farsa cósmica de caos y orden. 
-                            </p>
-                            <br>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'obra' '7' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{% static 'src/img/img08.jpg' %}" alt="Img 01" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                        <div class="card-body">
-                            <p><strong>El Gran Masturbador</strong></p>
-                            <hr>
-                            <p class="card-text">
-                                Una exploración atrevida de fantasías freudianas.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'obra' '8' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{% static 'src/img/img09.jpg' %}" alt="Img 01" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                        <div class="card-body">
-                            <p><strong>El Galacidalacidesoxiribunucleiccacid</strong></p>
-                            <hr>
-                            <p class="card-text">
-                                Un paisaje fantástico donde las criaturas bailan en una salsa surrealista.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">                
-                                <a href="{% url 'obra' '9' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
 
             </div>
         </div>
